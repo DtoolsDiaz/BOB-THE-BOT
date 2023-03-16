@@ -1,0 +1,15 @@
+const Discord = require('discord.js');
+const client = new Discord.Client();
+const preguntasRespuestas = {
+    '¿Cómo estás?': 'Estoy bien, gracias.',
+    '¿Cuál es tu nombre?': 'Mi nombre es Bob un bot para Discord.',
+    '¿Qué haces?': 'Estoy aquí para responder tus dudas.'
+};
+
+client.on('message', message => {
+    if (preguntasRespuestas[message.content]) {
+        message.reply(preguntasRespuestas[message.content]);
+    }
+});
+
+client.login('79d73a1121783c4000762800067f7bb4b6123c1116e055060bccfb91d5ad84e5');
